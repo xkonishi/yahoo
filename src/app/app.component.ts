@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
           if (params.address) {
 
             // 住所を緯度・経度に変換する
-            geo.execute({query: decodeURI(params.address)}, function(ydf) {
+            geo.execute({query: params.address}, function(ydf) {
               if (ydf.features.length > 0) {
                 const destination = ydf.features[0].latlng;
 
@@ -43,8 +43,8 @@ export class AppComponent implements OnInit {
                 map.addFeature(new yahoo.Marker(destination));
 
                 // 取引先の名称をラベルに表示
-                if (params.accountname) {
-                  map.addFeature(new yahoo.Label(destination, params.accountname));
+                if (params.accountName) {
+                  map.addFeature(new yahoo.Label(destination, params.accountName));
                 }
 
               } else {
