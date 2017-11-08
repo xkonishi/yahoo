@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 /*
@@ -18,14 +18,14 @@ export class YahooMapServiceProvider {
 
   load(address: string) {
     return new Promise(resolve => {
-      let url = 'https://map.yahooapis.jp/geocode/V1/geoCoder?appid='
+      const url = 'https://map.yahooapis.jp/geocode/V1/geoCoder?appid='
         + this.YAHOO_APP_ID
         + '&query=' + encodeURIComponent(address)
         + '&output=json';
 
       this.http.get(url)
         .map(res => res.json())
-        .subscribe(data => resolve(data))
+        .subscribe(data => resolve(data));
     });
   }
 }
