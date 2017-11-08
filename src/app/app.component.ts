@@ -17,6 +17,8 @@ export class AppComponent implements OnInit {
    * 地図の表示
    */
   initMap() {
+    console.log('initMap');
+
     const me = this;
     const params = (<any>window).getParams();
     const yahoo = (<any>window).Y;
