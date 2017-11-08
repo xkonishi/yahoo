@@ -7,9 +7,15 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
+  /**
+   * コンストラクタ
+   */
   constructor() {
   }
 
+  /**
+   * 地図の表示
+   */
   initMap() {
     const me = this;
     const params = (<any>window).getParams();
@@ -60,6 +66,9 @@ export class AppComponent implements OnInit {
     }
   }
 
+  /**
+   * ngOnInit
+   */
   ngOnInit() {
     console.log('ngOnInit');
 
