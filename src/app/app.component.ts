@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
     const me = this;
     const params = (<any>window).getParams();
     const yahoo = (<any>window).Y;
-    const map = new yahoo.Map('map');
+    const map = new yahoo.Map('map', {'configure': {'scrollWheelZoom': true}});
     const geo = new yahoo.GeoCoder();
 
     // 地図を描画
