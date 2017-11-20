@@ -7,18 +7,6 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
-  <script type="text/javascript">
-  function getParams(){
-	let params = {};
-	let pair = location.search.slice(1).split('&');
-	for(let i=0; pair[i]; i++){
-	　　let kv = pair[i].split('=');
-		params[kv[0]] = decodeURI(kv[1]);
-	}
-	return params;
-　　}
-  </script>
 </head>
 <body>
   <app-root>Loading...</app-root>
