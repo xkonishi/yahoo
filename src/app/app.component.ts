@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     console.log('initMap');
 
     const me = this;
-    const params = (<any>window).getParams();
+    const params = me.getParams();
     const yahoo = (<any>window).Y;
     const map = new yahoo.Map('map', {'configure': {'scrollWheelZoom': true}});
     const geo = new yahoo.GeoCoder();
@@ -66,6 +66,17 @@ export class AppComponent implements OnInit {
         }
       );
     }
+  }
+
+  /**
+   * URLパラメータの取得
+   */
+  getParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      'accountName': params.get('accountName'),
+      'address': params.get('address')
+    };
   }
 
   /**
