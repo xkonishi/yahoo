@@ -56,13 +56,25 @@ export class AppComponent implements OnInit {
                 }
 
               } else {
-                console.error('取引先の位置情報の取得に失敗しました。');
+                alert('取引先の位置情報の取得に失敗しました。');
               }
             });
           }
         },
         function(error) {
-          console.error('現在位置の取得に失敗しました。[' + error.code + ']');
+          let reason = '';
+          switch (error.code) {
+            case 1:
+              reason = '位置情報が許可されていません。';
+              break;
+            case 2:
+              reason = 'デバイスの位置が分かりません。';
+              break;
+            case 3:
+              reason = 'タイムアウトしました。';
+              break;
+          }
+          alert('現在位置の取得に失敗しました。[' + reason + ']');
         }
       );
     }
