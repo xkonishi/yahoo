@@ -40,6 +40,8 @@ export class AppComponent implements OnInit {
 
             // 住所を緯度・経度に変換する
             geo.execute({query: params.address}, function(ydf) {
+              // 検索結果のYDF（Yahoo地図の標準データフォーマット）より緯度・経度を取得
+              // YDFとは： https://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/ydf/#about
               if (ydf.features.length > 0) {
                 const destination = ydf.features[0].latlng;
 
